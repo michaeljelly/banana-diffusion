@@ -18,8 +18,8 @@ ADD server.py .
 # (in this case we have a python script)
 
 #Alternative to using build args, you can put your token in the next line
-#ENV HF_AUTH_TOKEN={token}
-ARG HF_AUTH_TOKEN
+ENV HF_AUTH_TOKEN=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
+# ARG HF_AUTH_TOKEN
 ADD download.py .
 RUN python3 download.py
 
@@ -29,5 +29,5 @@ ADD app.py .
 
 EXPOSE 8000
 
-ENV HF_AUTH_TOKEN=$HF_AUTH_TOKEN
+# ENV HF_AUTH_TOKEN=$HF_AUTH_TOKEN
 CMD python3 -u server.py
